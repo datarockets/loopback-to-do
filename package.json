@@ -21,13 +21,14 @@
     "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
+    "redux": "^4.0.1",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.1.6",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.5",
-    "babel-preset-es2015": "^6.24.1",
     "concurrently": "^3.5.0",
     "eslint": "^4.19.1",
     "eslint-config-datarockets-base": "^0.0.4-6",
