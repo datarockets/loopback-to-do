@@ -21,11 +21,12 @@
     "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
+    "loopback-connector-postgresql": "^3.5.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core":"^7.1.6",
+    "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.5",
