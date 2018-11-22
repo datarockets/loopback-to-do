@@ -1,1 +1,5 @@
-{}
+{
+  "developmentDB": {
+    "connector": "postgresql"
+  }
+}
