@@ -4,18 +4,28 @@
   "private": true,
   "proxy": "http://localhost:5000/",
   "dependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.11.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.5",
+    "concurrently": "^3.5.0",
+    "eslint-config-datarockets": "^0.0.4-6",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "eject": "react-scripts eject",
+    "lint": "eslint src"
   },
   "browserslist": [
     ">0.2%",
