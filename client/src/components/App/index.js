@@ -1,13 +1,13 @@
 import React from 'react'
 import './styles.css'
-import Header from '../Header'
-import CardCreate from './components/Card/Create'
+import Header from 'src/components/Header'
+import CreateCardFormContainer from 'src/containers/CreateCardFormContainer'
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <CardCreate />
+      <CreateCardFormContainer />
     </div>
   )
 }
