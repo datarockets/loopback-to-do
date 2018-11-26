@@ -32,14 +32,12 @@
 }
 
 .Header {
-  padding: 10px;
-  font-family: 'Avantgarde';
-  font-weight: normal;
-  font-size: 30px;
-  letter-spacing: -1px;
-  color: #DFBF84;
-  text-align: center;
+  height: 7vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Baloo Tamma', sans-serif;
   background: #1abc9c;
-  color: white;
+  color: #FFFFFF;
   font-size: 15px;
 }
