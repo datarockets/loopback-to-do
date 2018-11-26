@@ -11,8 +11,8 @@ function App() {
 
 function Header() {
   return (
-    <div>
-      <h1>Header</h1>
+    <div className="Header">
+      <h1>TODO list</h1>
     </div>
   )
 }

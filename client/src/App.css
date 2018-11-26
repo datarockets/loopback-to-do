@@ -30,3 +30,16 @@
     transform: rotate(360deg);
   }
 }
+
+.Header {
+  padding: 10px;
+  font-family: 'Avantgarde';
+  font-weight: normal;
+  font-size: 30px;
+  letter-spacing: -1px;
+  color: #DFBF84;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 15px;
+}
