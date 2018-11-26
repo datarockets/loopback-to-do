@@ -1,0 +1,10 @@
+.header {
+  height: 7vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Baloo Tamma', sans-serif;
+  background: #1abc9c;
+  color: #FFFFFF;
+  font-size: 15px;
+}
