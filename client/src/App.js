@@ -1,10 +1,10 @@
 import React from 'react'
-import './App.css'
+import './app.css'
 import Header from './Header'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
     </div>
   )
