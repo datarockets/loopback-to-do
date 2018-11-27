@@ -7,7 +7,13 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <CreateCardFormContainer />
+      <div className="pt-4">
+        <div className="container-fluid">
+          <section>
+            <CreateCardFormContainer />
+          </section>
+        </div>
+      </div>
     </div>
   )
 }
