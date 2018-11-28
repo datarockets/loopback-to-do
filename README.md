@@ -1,4 +1,4 @@
-# Loopback ToDo app
+# ToDo app
 
 Created and adjusted for node js stack learning
 
@@ -7,8 +7,7 @@ Created and adjusted for node js stack learning
 We use:
 
 * Express.js for routing
-* Loopback for ORM
-* Knex for migrations
+* Sequelize for ORM
 * React for client views
 
 ## Development
