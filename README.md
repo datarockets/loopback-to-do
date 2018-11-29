@@ -36,6 +36,14 @@ List of available scripts:
 * `yarn lint-client` - lint client code;
 * `yarn test` - run tests.
 
+### Usage
+
+1) For interacting with sequalize cli directly from command line, you may want to install it globally:
+
+  `yarn add sequelize-cli -g`
+
+On the other hand you can always use `node_modules/.bin/sequelize` for not installing globally 😉
+
 ## Testing
 
 WIP
