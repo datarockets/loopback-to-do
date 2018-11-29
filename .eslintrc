@@ -1,6 +1,0 @@
-{
-  "extends": "datarockets-base",
-  "rules": {
-    "no-console": 0
-  }
-}

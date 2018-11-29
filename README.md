@@ -1,4 +1,4 @@
-# Loopback ToDo app
+# ToDo app
 
 Created and adjusted for node js stack learning
 
@@ -7,8 +7,7 @@ Created and adjusted for node js stack learning
 We use:
 
 * Express.js for routing
-* Loopback for ORM
-* Knex for migrations
+* Sequelize for ORM
 * React for client views
 
 ## Development
@@ -18,6 +17,7 @@ We use:
 1) You may want to install packages for both server and client apps, here you are:
 
 * in root dir: `yarn`
+* in /server dir: `yarn`
 * in /client dir: `yarn`
 
 2) Create database using psql:
@@ -31,6 +31,7 @@ List of available scripts:
 * `yarn dev` - run both server and client apps;
 * `yarn client` - run client app;
 * `yarn server` - run server app;
+* `yarn lint` - lint server and client code;
 * `yarn lint-server` - lint server code;
 * `yarn lint-client` - lint client code;
 * `yarn test` - run tests.
