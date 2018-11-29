@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import TodoCard from 'src/components/TodoCard'
+import TodoCardList from 'src/components/TodoCardList'
+import axios from 'axios'
 
 class TodoCardListContainer extends Component {
   state = {
@@ -7,14 +8,23 @@ class TodoCardListContainer extends Component {
   }
 
   componentDidMount() {
-    this.setState({ todoCards: [{ description: 'kek' }] }) // remove it after complete endpoint
+    this.setState({ todoCards: [{ id: 1, description: 'kek' }] }) // remove it after complete endpoint
+    this.fetchList()
   }
 
   render = () => (
-    <div className="col-sm-3 mx-auto">
-      { this.state.todoCards.map(todoCard => <TodoCard description={todoCard.description} />) }
-    </div>
+    <TodoCardList todoCards={this.state.todoCards} />
   );
+
+  async fetchList() {
+    let response
+    try {
+      response = await axios.get('http://localhost:5000/api/v1/cards')
+      this.setState(response)
+    } catch (error) {
+      alert(error)
+    }
+  }
 }
 
 export default TodoCardListContainer
