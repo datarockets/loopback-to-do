@@ -1,0 +1,10 @@
+#! /bin/bash
+
+echo "Updating dependencies:"
+yarn
+
+echo "Updating client dependencies:"
+cd client && yarn
+
+echo "Updating client dependencies:"
+cd ../client && yarn

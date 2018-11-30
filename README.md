@@ -34,7 +34,7 @@ List of available scripts:
 * `yarn lint` - lint server and client code;
 * `yarn lint-server` - lint server code;
 * `yarn lint-client` - lint client code;
-* `yarn test` - run tests.
+* `yarn update` or `bin/update` - update all dependencies.
 
 ### Usage
 
