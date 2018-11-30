@@ -1,5 +1,5 @@
-const cards = require('./cards');
+const cards = require('./cards')
 
 module.exports = {
-  cards
-};
+  cards,
+}

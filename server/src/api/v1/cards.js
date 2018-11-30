@@ -1,5 +1,5 @@
-const cardsController = require('../../controllers/v1').cards;
+const cardsController = require('../../controllers/v1').cards
 
 module.exports = (api) => {
-  api.post('/cards', cardsController.create);
-};
+  api.post('/cards', cardsController.create)
+}
