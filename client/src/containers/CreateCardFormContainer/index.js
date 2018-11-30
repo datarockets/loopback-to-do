@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import CreateCardForm from 'src/components/CreateCardForm'
-
-const axios = require('axios')
+import axios from 'axios'
 
 class CreateCardFormContainer extends Component {
   state = {
@@ -23,7 +22,7 @@ class CreateCardFormContainer extends Component {
   createCard = (event) => {
     alert(`An card was submitted: ${this.state.description}`)
     event.preventDefault()
-    axios.post('http://localhost:5000/cards', {
+    axios.post('http://localhost:5000/api/v1/cards', {
       description: this.description,
     })
       .then((response) => {
