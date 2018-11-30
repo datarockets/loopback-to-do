@@ -12,7 +12,8 @@
     "lint": "yarn lint-server && yarn lint-client",
     "lint-server": "cd server && yarn lint",
     "lint-client": "cd client && yarn lint",
-    "update": "bin/update"
+    "update": "bin/update",
+    "test-server": "cd server && yarn jasmine"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"
