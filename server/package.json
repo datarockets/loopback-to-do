@@ -32,6 +32,7 @@
     "eslint-config-datarockets-base": "^0.0.4-6",
     "eslint-plugin-import": "^2.13.0",
     "jasmine": "^3.3.0",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
+    "request": "^2.88.0"
   }
 }
