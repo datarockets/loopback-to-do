@@ -1,5 +1,5 @@
-module.exports = function(api){
-  api.post('/cards', (req, res) => {
-    res.send('test2')
-  })
-}
+const cardsController = require('../../controllers/v1').cards;
+
+module.exports = (api) => {
+  api.post('/cards', cardsController.create);
+};
