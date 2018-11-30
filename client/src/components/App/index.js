@@ -11,10 +11,10 @@ const App = props => (
     <div className="pt-4">
       <div className="container-fluid">
         <section>
-          <CreateCardFormContainer addTodoCard={props.addTodoCard} />
+          <CreateCardFormContainer onCreate={props.addTodoCard} />
         </section>
         <section>
-          <TodoCardList todoCards={props.todoCards} />
+          <TodoCardList items={props.todoCards} />
         </section>
       </div>
     </div>

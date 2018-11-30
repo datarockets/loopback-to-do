@@ -5,7 +5,7 @@ import TodoCard from 'src/components/TodoCard'
 const TodoCardList = props => (
   <div className="col-sm-3 mx-auto">
     {
-      props.todoCards.map(
+      props.items.map(
         todoCard =>
           <TodoCard key={todoCard.id} description={todoCard.description} />,
       )
@@ -14,7 +14,7 @@ const TodoCardList = props => (
 )
 
 TodoCardList.propTypes = {
-  todoCards: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(TodoCard).isRequired,
 }
 
 export default TodoCardList

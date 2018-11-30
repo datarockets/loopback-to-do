@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CreateCardForm from 'src/components/CreateCardForm'
-import axios from 'axios'
 import PropTypes from 'prop-types'
+import api from './requests'
 
 class CreateCardFormContainer extends Component {
   state = {
@@ -22,24 +22,24 @@ class CreateCardFormContainer extends Component {
 
   createCard = (event) => {
     event.preventDefault()
-    axios.post('http://localhost:5000/api/v1/cards', {
-      description: this.description,
-    })
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
+    api.cards.create(
+      { description: this.state.description },
+      (response) => {
+        this.props.onCreate(response)
+      },
+      (error) => {
         alert(error)
-        this.props.addTodoCard({
+        this.props.onCreate({
           id: Math.floor(Math.random() * 100) + 3,
           description: this.state.description,
         }) // change after completing endpoint
-      })
+      },
+    )
   }
 }
 
 CreateCardFormContainer.propTypes = {
-  addTodoCard: PropTypes.func.isRequired,
+  onCreate: PropTypes.func.isRequired,
 }
 
 export default CreateCardFormContainer
