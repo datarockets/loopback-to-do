@@ -14,7 +14,7 @@ describe("Post request /api/v1/cards", () => {
     });
   });
 
-  it("returns 400 code when request dont't have description", (done) => {
+  it("returns 400 code when request doesnt't have description", (done) => {
     request({
       url: base_url,
       method: "POST",
