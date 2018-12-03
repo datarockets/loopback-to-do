@@ -8,7 +8,8 @@
     "dev": "nodemon -w src --exec \"babel-node src\"",
     "build": "babel src -s -D -d build",
     "start": "node build",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "yarn jasmine"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
@@ -31,6 +32,8 @@
     "eslint": "5.6.0",
     "eslint-config-datarockets-base": "^0.0.4-6",
     "eslint-plugin-import": "^2.13.0",
-    "nodemon": "^1.9.2"
+    "jasmine": "^3.3.0",
+    "nodemon": "^1.9.2",
+    "request": "^2.88.0"
   }
 }
