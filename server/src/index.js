@@ -4,7 +4,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import middleware from './middleware'
-import api from './api/v1'
+import api from './routes/v1'
 import config from './config.json'
 
 require('dotenv').config()
