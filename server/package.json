@@ -8,7 +8,8 @@
     "dev": "nodemon -w src --exec \"babel-node src\"",
     "build": "babel src -s -D -d build",
     "start": "node build",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "yarn jasmine"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
