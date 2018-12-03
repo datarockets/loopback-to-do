@@ -13,4 +13,16 @@ describe("Post request /api/v1/cards", () => {
       done()
     });
   });
+
+  it("returns 400 code when request dont't have description", (done) => {
+    request({
+      url: base_url,
+      method: "POST",
+      json: true,
+      body: { },
+    }, (error, response, body) => {
+      expect(response.statusCode).toEqual(400)
+      done()
+    });
+  });
 });
