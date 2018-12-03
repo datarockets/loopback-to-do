@@ -6,5 +6,8 @@ yarn
 echo "Updating client dependencies:"
 cd client && yarn
 
-echo "Updating client dependencies:"
-cd ../client && yarn
+echo "Updating server dependencies:"
+cd ../server && yarn
+
+echo "Run migrations:"
+node_modules/.bin/sequelize db:migrate
