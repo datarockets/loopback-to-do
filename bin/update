@@ -9,5 +9,8 @@ cd client && yarn
 echo "Updating server dependencies:"
 cd ../server && yarn
 
+echo "Set up env variables:"
+cp ../server/.env.sample ../server/.env
+
 echo "Run migrations:"
 node_modules/.bin/sequelize db:migrate
