@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CreateCardForm from 'src/components/CreateCardForm'
-import axios from 'axios'
+import PropTypes from 'prop-types'
+import api from './requests'
 
 class CreateCardFormContainer extends Component {
   state = {
@@ -20,15 +21,21 @@ class CreateCardFormContainer extends Component {
   }
 
   createCard = (event) => {
-    alert(`An card was submitted: ${this.state.description}`)
     event.preventDefault()
-    axios.post('http://localhost:5000/api/v1/cards', {
-      description: this.description,
-    })
-      .then((response) => {
-        console.log(response)
-      })
+    api.cards.create(
+      { description: this.state.description },
+      (response) => {
+        this.props.onCreate(response.data)
+      },
+      (error) => {
+        alert(error)
+      },
+    )
   }
+}
+
+CreateCardFormContainer.propTypes = {
+  onCreate: PropTypes.func.isRequired,
 }
 
 export default CreateCardFormContainer

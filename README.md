@@ -12,6 +12,16 @@ We use:
 
 ## Development
 
+In order to debug backend code in browser do several steps:
+
+  `cd server && yarn debug` 
+
+  visit _about://inspect_ in Chrome and click *Open dedicated DevTools for Node* link
+
+  put `debugger` into your code
+
+  enjoy
+
 ### Setup
 
 1) You may want to install packages for both server and client apps, here you are:
