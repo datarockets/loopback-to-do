@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon -w src --exec \"babel-node src\"",
+    "debug": "nodemon -w src src/index.js --exec 'babel-node --inspect'",
     "build": "babel src -s -D -d build",
     "start": "node build",
     "lint": "eslint src",
