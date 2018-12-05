@@ -7,6 +7,7 @@ module.exports = {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
+    operatorsAliases: false,
     dialect: 'postgres',
   },
   test: {
@@ -14,6 +15,7 @@ module.exports = {
     password: null,
     database: 'todo-list-db-test',
     host: '127.0.0.1',
+    operatorsAliases: false,
     dialect: 'postgres',
   },
   production: {
@@ -21,6 +23,7 @@ module.exports = {
     password: null,
     database: 'todo-list-db-production',
     host: '127.0.0.1',
+    operatorsAliases: false,
     dialect: 'postgres',
   },
 }
