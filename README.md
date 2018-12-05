@@ -13,27 +13,28 @@ We use:
 
 ## Development
 
-In order to debug backend code in browser do several steps:
-
-  `cd server && yarn debug`
-
-  visit _about://inspect_ in Chrome and click *Open dedicated DevTools for Node* link
-
-  put `debugger` into your code
-
-  enjoy
-
 ### Setup
+
+WIP: `yarn setup` script will be implemented for faster development start
 
 1) You may want to install packages for both server and client apps, here you are:
 
-* in root dir: `yarn`
-* in /server dir: `yarn`
-* in /client dir: `yarn`
+in root dir: `yarn update`
 
-2) Create database using psql:
+2) Create database using sequelize:
 
-`CREATE DATABASE "todo-list-db"`
+  `node_modules/.bin/sequelize db:create`
+  `NODE_ENV=test node_modules/.bin/sequelize db:create`
+
+3) For interacting with sequalize cli directly from command line, you may want to install it globally:
+
+  `yarn add sequelize-cli -g`
+
+On the other hand you can always use `node_modules/.bin/sequelize` for not installing globally 😉
+
+4) Copy env variables
+
+  `cp ../server/.env.sample ../server/.env`
 
 ### Scripts
 
@@ -48,13 +49,17 @@ List of available scripts:
 * `yarn update` or `bin/update` - update all dependencies.
 * `yarn test-server` - run servers' tests.
 
-### Usage
+### Debug
 
-1) For interacting with sequalize cli directly from command line, you may want to install it globally:
+In order to debug backend code in browser do several steps:
 
-  `yarn add sequelize-cli -g`
+  `cd server && yarn debug`
 
-On the other hand you can always use `node_modules/.bin/sequelize` for not installing globally 😉
+  visit _about://inspect_ in Chrome and click *Open dedicated DevTools for Node* link
+
+  put `debugger` into your code
+
+  enjoy
 
 ## Testing
 
