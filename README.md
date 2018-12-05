@@ -8,13 +8,14 @@ We use:
 
 * Express.js for routing
 * Sequelize for ORM
+* API Blueprint for API docs
 * React for client views
 
 ## Development
 
 In order to debug backend code in browser do several steps:
 
-  `cd server && yarn debug` 
+  `cd server && yarn debug`
 
   visit _about://inspect_ in Chrome and click *Open dedicated DevTools for Node* link
 
