@@ -1,11 +1,11 @@
 const request = require('request')
 
-describe('Post request /api/v1/cards', () => {
-  const baseUrl = 'http://localhost:5000/api/v1/cards'
+const endpoint = 'http://localhost:5000/api/v1/cards'
 
+describe('POST /api/v1/cards', () => {
   it('returns 201 code when card is created', (done) => {
     request({
-      url: baseUrl,
+      url: endpoint,
       method: 'POST',
       json: true,
       body: { description: 'Test' },
@@ -17,12 +17,25 @@ describe('Post request /api/v1/cards', () => {
 
   it("returns 400 code when request doesnt't have description", (done) => {
     request({
-      url: baseUrl,
+      url: endpoint,
       method: 'POST',
       json: true,
       body: { },
     }, (error, response) => {
       expect(response.statusCode).toEqual(400)
+      done()
+    })
+  })
+})
+
+describe('GET /api/v1/cards', () => {
+  it('returns 200 code when cards are loaded', (done) => {
+    request({
+      url: endpoint,
+      method: 'GET',
+      json: true,
+    }, (error, response) => {
+      expect(response.statusCode).toEqual(200)
       done()
     })
   })
