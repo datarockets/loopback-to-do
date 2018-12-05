@@ -1,12 +1,18 @@
 const { Card } = require('../../models')
 
 module.exports = {
-  create(req, res) {
-    return Card
+  create: (req, res) => {
+    Card
       .create({
         description: req.body.description,
+        raw: true,
       })
-      .then((card) => { res.status(201).send(card.dataValues) })
+      .then((card) => { res.status(201).send(card) })
+      .catch((error) => { res.status(400).send(error) })
+  },
+  ded: (req, res) => {
+    Card.findAll({ raw: true })
+      .then((cards) => { res.status(200).send(cards) })
       .catch((error) => { res.status(400).send(error) })
   },
 }

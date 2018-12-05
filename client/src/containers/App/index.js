@@ -9,7 +9,7 @@ class AppContainer extends Component {
 
   componentDidMount() {
     api.cards.getAll(
-      (response) => { this.setState({ todoCards: response }) },
+      (response) => { this.setState({ todoCards: response.data }) },
       (error) => { alert(error) },
     )
   }

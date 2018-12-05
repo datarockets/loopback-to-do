@@ -1,11 +1,7 @@
 import { Router } from 'express'
 
-const api = Router()
+const router = Router()
 
-api.get('/', (req, res) => {
-  res.json('Hi from /api/v1')
-})
+require('./cards')(router)
 
-require('./cards')(api)
-
-export default api
+export default router

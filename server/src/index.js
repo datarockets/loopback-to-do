@@ -4,7 +4,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import middleware from './middleware'
-import api from './routes/v1'
+import apiRouter from './routes/v1'
 import config from './config.json'
 
 require('dotenv').config()
@@ -25,7 +25,7 @@ app.use(bodyParser.json({
 }))
 
 // api router
-app.use('/api/v1', api)
+app.use('/api/v1', apiRouter)
 // internal middleware
 app.use(middleware())
 
