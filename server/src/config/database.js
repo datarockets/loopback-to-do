@@ -15,6 +15,7 @@ module.exports = {
     password: null,
     database: 'todo-list-db-test',
     host: '127.0.0.1',
+    port: 5432,
     operatorsAliases: false,
     dialect: 'postgres',
   },
