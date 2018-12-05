@@ -10,10 +10,7 @@ class AppContainer extends Component {
   componentDidMount() {
     api.cards.getAll(
       (response) => { this.setState({ todoCards: response }) },
-      (error) => {
-        alert(error)
-        this.setState({ todoCards: [{ id: 1, description: 'kek' }, { id: 2, description: 'azaza' }] }) // remove after completing endpoint
-      },
+      (error) => { alert(error) },
     )
   }
 

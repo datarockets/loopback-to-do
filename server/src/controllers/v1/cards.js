@@ -6,7 +6,7 @@ module.exports = {
       .create({
         description: req.body.description,
       })
-      .then(() => { res.status(201).send() })
+      .then((card) => { res.status(201).send(card.dataValues) })
       .catch((error) => { res.status(400).send(error) })
   },
 }

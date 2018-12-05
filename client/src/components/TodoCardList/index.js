@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TodoCard from 'src/components/TodoCard'
+import TodoCard from 'src/components/TodoCardList/Item'
 
 const TodoCardList = props => (
   <div className="col-sm-3 mx-auto">

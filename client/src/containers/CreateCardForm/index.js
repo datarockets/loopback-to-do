@@ -25,14 +25,10 @@ class CreateCardFormContainer extends Component {
     api.cards.create(
       { description: this.state.description },
       (response) => {
-        this.props.onCreate(response)
+        this.props.onCreate(response.data)
       },
       (error) => {
         alert(error)
-        this.props.onCreate({
-          id: Math.floor(Math.random() * 100) + 3,
-          description: this.state.description,
-        }) // change after completing endpoint
       },
     )
   }

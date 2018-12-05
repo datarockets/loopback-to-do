@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Card, CardBody } from 'mdbreact'
 
-const TodoCard = ({ description }) => (
+const Item = ({ description }) => (
   <div className="pt-1">
     <Card>
       <CardBody className="text-left">
@@ -12,8 +12,8 @@ const TodoCard = ({ description }) => (
   </div>
 )
 
-TodoCard.propTypes = {
+Item.propTypes = {
   description: PropTypes.string.isRequired,
 }
 
-export default TodoCard
+export default Item

@@ -1,8 +1,9 @@
 import React from 'react'
 import './styles.css'
 import Header from 'src/components/Header'
-import CreateCardFormContainer from 'src/containers/CreateCardFormContainer'
+import CreateCardFormContainer from 'src/containers/CreateCardForm'
 import TodoCardList from 'src/components/TodoCardList'
+import TodoCard from 'src/components/TodoCardList/Item'
 import PropTypes from 'prop-types'
 
 const App = props => (
@@ -22,7 +23,7 @@ const App = props => (
 )
 
 App.propTypes = {
-  todoCards: PropTypes.array.isRequired,
+  todoCards: PropTypes.arrayOf(TodoCard).isRequired,
   addTodoCard: PropTypes.func.isRequired,
 }
 

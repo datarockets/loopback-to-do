@@ -4,6 +4,6 @@ import 'font-awesome/css/font-awesome.min.css'
 import 'bootstrap-css-only/css/bootstrap.min.css'
 import 'mdbreact/dist/css/mdb.css'
 import './index.css'
-import AppContainer from './containers/AppContainer'
+import AppContainer from './containers/App'
 
 ReactDOM.render(<AppContainer />, document.getElementById('root'))
