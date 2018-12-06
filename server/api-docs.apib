@@ -1,0 +1,56 @@
+FORMAT: 1A
+
+# TODO app API docs v1
+
+Note: all described endpoints should be used with `api/v1` prefix
+
+## Card Collection [/api/v1/cards]
+
+### POST
+Creates Card
+
+- Attributes (object)
+    + description (string, required)
+
+- Request (application/json)
+
+    - Body
+
+        ```
+        {
+          "description": "Homework"
+        }
+        ```
+
+- Response 201 (application/json; charset=utf-8)
+
+    - Attributes (object)
+        + id (number)
+        + description (string)
+        + updatedAt (string) - Timestamp of the last time the card was updated;
+        + createdAt (string) - Timestamp of the card creation.
+
+    - Body
+
+        ```
+        {
+          "id": 29,
+          "description": "Homework",
+          "updatedAt": "2018-12-05T16:44:29.408Z",
+          "createdAt": "2018-12-05T16:44:29.408Z"
+        }
+        ```
+
+- Request (application/json)
+
+    With invalid description (empty)
+
+    - Body
+
+        ```
+        {
+          "description": null
+        }
+        ```
+
+- Response 400 (application/json; charset=utf-8)
