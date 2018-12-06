@@ -11,7 +11,7 @@ module.exports = {
     dialect: 'postgres',
   },
   test: {
-    username: 'root',
+    username: process.env.DB_USER,
     password: null,
     database: 'todo-list-db-test',
     host: '127.0.0.1',
