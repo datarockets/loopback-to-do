@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import TodoCard from 'src/components/TodoCardList/Item'
-import axios from 'axios'
 
 class TodoCardContainer extends Component {
   state = {
@@ -18,6 +18,10 @@ class TodoCardContainer extends Component {
   setReadiness = (event) => {
     this.setState({ readiness: event.target.value })
   }
+}
+
+TodoCardContainer.propTypes = {
+  description: PropTypes.string.isRequired,
 }
 
 export default TodoCardContainer
