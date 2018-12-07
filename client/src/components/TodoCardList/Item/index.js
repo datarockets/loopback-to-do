@@ -7,6 +7,7 @@ const Item = props => (
     <Card>
       <CardBody className="text-left">
         <Input
+          checked={props.readiness}
           type="checkbox"
           id="checkbox1"
           label=<h5 className="mx-0 my-0">{props.description}</h5>
@@ -17,6 +18,7 @@ const Item = props => (
 )
 
 Item.propTypes = {
+  readiness: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
 }
 

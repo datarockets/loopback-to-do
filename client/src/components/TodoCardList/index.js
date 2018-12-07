@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TodoCard from 'src/components/TodoCardList/Item'
+import TodoCardContainer from 'src/containers/TodoCardList/Item'
 
 const TodoCardList = props => (
   <div className="col-sm-3 mx-auto">
     {
       props.items.map(
         todoCard =>
-          <TodoCard key={todoCard.id} description={todoCard.description} />,
+          <TodoCardContainer key={todoCard.id} description={todoCard.description} />,
       )
     }
   </div>
 )
 
 TodoCardList.propTypes = {
-  items: PropTypes.arrayOf(TodoCard).isRequired,
+  items: PropTypes.arrayOf(TodoCardContainer).isRequired,
 }
 
 export default TodoCardList

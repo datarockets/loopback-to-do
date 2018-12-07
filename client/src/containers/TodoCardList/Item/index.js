@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Item from 'src/components/TodoCardList/Item'
+import TodoCard from 'src/components/TodoCardList/Item'
 import axios from 'axios'
 
 class TodoCardContainer extends Component {
@@ -8,7 +8,8 @@ class TodoCardContainer extends Component {
   }
 
   render = () => (
-    <Item
+    <TodoCard
+      description={this.props.description}
       readiness={this.state.readiness}
       onChange={this.setReadiness}
     />
