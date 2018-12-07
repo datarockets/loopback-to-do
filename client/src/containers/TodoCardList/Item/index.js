@@ -16,11 +16,12 @@ class TodoCardContainer extends Component {
   );
 
   setReadiness = (event) => {
-    this.setState({ readiness: event.target.value })
+    this.setState({ readiness: event.target.checked })
   }
 }
 
 TodoCardContainer.propTypes = {
+  readiness: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
 }
 

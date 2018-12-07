@@ -8,9 +8,9 @@ const Item = props => (
       <CardBody className="text-left">
         <Input
           checked={props.readiness}
+          onClick={props.onChange}
           type="checkbox"
-          id="checkbox1"
-          label=<h5 className="mx-0 my-0">{props.description}</h5>
+          label={props.description}
         />
       </CardBody>
     </Card>
@@ -20,6 +20,7 @@ const Item = props => (
 Item.propTypes = {
   readiness: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 }
 
 export default Item
