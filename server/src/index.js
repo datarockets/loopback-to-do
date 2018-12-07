@@ -30,7 +30,7 @@ app.use('/api/v1', api)
 app.use(middleware())
 
 app.server.listen(process.env.PORT || config.port, () => {
-  console.log(`Started on port ${app.server.address().port}`)
+  console.log(`Started ${process.env.NODE_ENV} env on port ${app.server.address().port}`)
 })
 
 export default app

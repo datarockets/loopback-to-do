@@ -32,7 +32,13 @@ in root dir: `yarn update`
 
 On the other hand you can always use `node_modules/.bin/sequelize` for not installing globally 😉
 
-4) Copy env variables
+4) Install `dredd` globally for easier usage
+
+  `yarn add dredd -g`
+
+Or just use `node_modules/.bin/dredd` instead
+
+5) Copy env variables
 
   `cp ../server/.env.sample ../server/.env`
 
