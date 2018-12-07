@@ -26,5 +26,8 @@ Object.keys(db).forEach((modelName) => {
 
 db.sequelize = sequelize
 db.Sequelize = Sequelize
+db.cleanUp = async () => {
+  sequelize.sync({ force: true })
+}
 
 module.exports = db

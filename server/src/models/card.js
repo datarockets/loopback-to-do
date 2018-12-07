@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Card = sequelize.define('Card', {
-    description: DataTypes.STRING,
+    description: { type: DataTypes.STRING, allowNull: false },
   }, {})
 
   return Card

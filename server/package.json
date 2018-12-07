@@ -6,13 +6,13 @@
   "private": true,
   "scripts": {
     "dev": "nodemon -w src --exec \"babel-node src\"",
-    "dev-test": "NODE_ENV=test babel-node src",
+    "dev-test": "NODE_ENV=test PORT=8000 babel-node src",
     "debug": "nodemon -w src src/index.js --exec 'babel-node --inspect'",
     "build": "babel src -s -D -d build",
     "start": "node build",
     "lint": "eslint src",
-    "test": "yarn jasmine",
-    "test-api": "babel-node node_modules/.bin/dredd"
+    "test": "NODE_ENV=test yarn jasmine",
+    "test-api": "NODE_ENV=test babel-node node_modules/.bin/dredd"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
