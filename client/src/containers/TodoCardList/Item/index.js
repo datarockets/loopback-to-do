@@ -5,7 +5,7 @@ import api from './requests'
 
 class TodoCardContainer extends Component {
   state = {
-    readiness: false,
+    readiness: false, //while server implementation is not ready
   }
 
   render = () => (

@@ -7,7 +7,7 @@ const TodoCardList = props => (
     {
       props.items.map(
         todoCard =>
-          <TodoCardContainer key={todoCard.id} id={todoCard.id} description={todoCard.description} />,
+          <TodoCardContainer key={todoCard.id} id={todoCard.id} description={todoCard.description} readiness={todoCard.readiness} />,
       )
     }
   </div>
