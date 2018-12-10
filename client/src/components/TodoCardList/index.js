@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TodoCardContainer from 'src/containers/TodoCardList/Item'
+import TodoCard from 'src/components/TodoCardList/Item'
 
 const TodoCardList = props => (
   <div className="col-sm-3 mx-auto">
@@ -20,7 +21,7 @@ const TodoCardList = props => (
 )
 
 TodoCardList.propTypes = {
-  items: PropTypes.arrayOf(TodoCardContainer).isRequired,
+  items: PropTypes.arrayOf(TodoCard).isRequired,
 }
 
 export default TodoCardList
