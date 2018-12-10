@@ -5,7 +5,7 @@ import api from './requests'
 
 class TodoCardContainer extends Component {
   state = {
-    readiness: false, //while server implementation is not ready
+    readiness: this.props.readiness || false,
   }
 
   render = () => (
@@ -30,6 +30,7 @@ class TodoCardContainer extends Component {
 TodoCardContainer.propTypes = {
   readiness: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 }
 
 export default TodoCardContainer
