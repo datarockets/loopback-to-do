@@ -12,7 +12,7 @@ const TodoCardList = props => (
             key={todoCard.id}
             id={todoCard.id}
             description={todoCard.description}
-            readiness={todoCard.readiness}
+            completedAt={todoCard.completedAt}
           />
         ),
       )
