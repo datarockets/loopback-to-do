@@ -16,9 +16,9 @@ class TodoCardContainer extends Component {
     />
   );
 
-  updateReadiness = (event) => {
+  updateReadiness = () => {
     if (this.isCompleted()) {
-      api.card.completion.delete(
+      api.card.completion.destroy(
         { id: this.props.id },
         () => {
           this.setState({ readiness: null })
@@ -38,16 +38,6 @@ class TodoCardContainer extends Component {
         },
       )
     }
-
-    api.card.update(
-      { id: this.props.id, readiness: event.target.checked },
-      (response) => {
-        this.setState({ readiness: response.card.readiness })
-      },
-      (error) => {
-        alert(error)
-      },
-    )
   }
 
   isCompleted = () =>
