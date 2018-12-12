@@ -5,23 +5,23 @@ import api from './requests'
 
 class TodoCardContainer extends Component {
   state = {
-    readiness: this.props.readiness,
+    completedAt: this.props.completedAt,
   }
 
   render = () => (
     <TodoCard
       description={this.props.description}
-      readiness={this.state.readiness}
-      onChange={this.updateReadiness}
+      completedAt={this.state.completedAt}
+      onChange={this.updateCompletedAt}
     />
   );
 
-  updateReadiness = () => {
+  updateCompletedAt = () => {
     if (this.isCompleted()) {
       api.card.completion.destroy(
         { id: this.props.id },
         () => {
-          this.setState({ readiness: null })
+          this.setState({ completedAt: null })
         },
         (error) => {
           alert(error)
@@ -31,7 +31,7 @@ class TodoCardContainer extends Component {
       api.card.completion.create(
         { id: this.props.id },
         (response) => {
-          this.setState({ readiness: response.card.readiness })
+          this.setState({ completedAt: response.card.completedAt })
         },
         (error) => {
           alert(error)
@@ -41,11 +41,11 @@ class TodoCardContainer extends Component {
   }
 
   isCompleted = () =>
-    this.state.readiness != null
+    this.state.completedAt != null
 }
 
 TodoCardContainer.propTypes = {
-  readiness: PropTypes.bool.isRequired,
+  completedAt: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 }
