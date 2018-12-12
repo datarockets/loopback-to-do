@@ -18,7 +18,6 @@ const Item = props => (
 )
 
 Item.propTypes = {
-  completedAt: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 }

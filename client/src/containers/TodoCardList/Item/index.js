@@ -45,7 +45,6 @@ class TodoCardContainer extends Component {
 }
 
 TodoCardContainer.propTypes = {
-  completedAt: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 }
