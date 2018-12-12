@@ -27,6 +27,9 @@ class TodoCardContainer extends Component {
       },
     )
   }
+
+  isCompleted = () =>
+    this.state.readiness != null
 }
 
 TodoCardContainer.propTypes = {
