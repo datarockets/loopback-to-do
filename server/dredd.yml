@@ -1,8 +1,7 @@
 dry-run: null
-hookfiles: ./spec/unit/controllers/index.hook.js
+hookfiles: ./spec/unit/controllers/**/*.hook.js
 language: nodejs
 sandbox: false
-server: yarn dev-test
 server-wait: 3
 init: false
 custom: {}

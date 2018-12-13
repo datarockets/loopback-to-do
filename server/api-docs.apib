@@ -71,3 +71,33 @@ Creates Card
           }
         ]
         ```
+        
+## Card Completion Collection [/api/v1/cards/{id}/completion]
+
++ Parameters
+    + id: 1 (number)
+
+### POST
+Create completion for card
+
+- Request (application/json)
+
+- Response 201 (application/json; charset=utf-8)
+
+    - Attributes (object)
+        + completedAt (string) - Timestamp of the card completion creation.
+
+    - Body
+
+        ```
+        {
+          "completedAt": "2018-12-05T16:44:29.408Z"
+        }
+        ```
+
+### DELETE
+Destroy completion for card
+
+- Request (application/json)
+
++ Response 204

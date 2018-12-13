@@ -1,12 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, CardBody } from 'mdbreact'
+import { Card, CardBody, Input } from 'mdbreact'
 
-const Item = ({ description }) => (
+const Item = props => (
   <div className="pt-1">
     <Card>
       <CardBody className="text-left">
-        <h5 className="mx-0 my-0">{description}</h5>
+        <Input
+          checked={props.completedAt}
+          onClick={props.onChange}
+          type="checkbox"
+          label={props.description}
+        />
       </CardBody>
     </Card>
   </div>
@@ -14,6 +19,7 @@ const Item = ({ description }) => (
 
 Item.propTypes = {
   description: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 }
 
 export default Item

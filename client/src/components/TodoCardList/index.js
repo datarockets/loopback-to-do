@@ -1,13 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import TodoCardContainer from 'src/containers/TodoCardList/Item'
 import TodoCard from 'src/components/TodoCardList/Item'
 
 const TodoCardList = props => (
   <div className="col-sm-3 mx-auto">
     {
       props.items.map(
-        todoCard =>
-          <TodoCard key={todoCard.id} description={todoCard.description} />,
+        todoCard => (
+          <TodoCardContainer
+            key={todoCard.id}
+            id={todoCard.id}
+            description={todoCard.description}
+            completedAt={todoCard.completedAt}
+          />
+        ),
       )
     }
   </div>
