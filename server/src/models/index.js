@@ -8,6 +8,17 @@ const config = require('../config/database.js')[process.env.NODE_ENV || 'develop
 const db = {}
 const sequelize = new Sequelize(config.database, config.username, config.password, config)
 
+// Establish connection to db
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection to database has been established successfully.')
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err)
+  })
+
+// Impot models from sources
 fs
   .readdirSync(__dirname)
   .filter(file => (
@@ -18,6 +29,7 @@ fs
     db[model.name] = model
   })
 
+// Build associations between models
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db)
