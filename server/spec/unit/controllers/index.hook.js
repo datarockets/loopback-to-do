@@ -1,10 +1,10 @@
 import { beforeAll, afterAll } from 'hooks'
 import db from '../../../src/models'
 
-beforeAll(function (transactions, done) {
+beforeAll((transactions, done) => {
   db.cleanUp().then(() => done())
 })
 
-afterAll(function (transactions, done) {
+afterAll((transactions, done) => {
   db.cleanUp().then(() => done())
 })
