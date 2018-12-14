@@ -6,7 +6,7 @@ module.exports = {
       .then((card) => {
         card.update({
           completedAt: Date.now(),
-        }).then(() => { res.status(201).send({ completedAt: card.completedAt }) })
+        }).then(() => { res.status(201).send({ card: { completedAt: card.completedAt } }) })
           .catch((error) => { res.status(400).send(error) })
       })
       .catch((error) => { res.status(400).send(error) })
