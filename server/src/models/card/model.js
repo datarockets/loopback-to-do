@@ -4,5 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     completedAt: { type: DataTypes.DATE, allowNull: true },
   }, {})
 
+  Card.prototype.complete = function complete() {
+    return this.update({ completedAt: Date.now() })
+  }
+
+  Card.prototype.uncomplete = function uncomplete() {
+    return this.update({ completedAt: null })
+  }
+
   return Card
 }
