@@ -1,4 +1,4 @@
-const cardsController = require('../../../controllers/v1').cards
+const cardsController = require('../../controllers/v1').cards
 
 module.exports = (router) => {
   router
