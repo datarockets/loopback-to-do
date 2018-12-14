@@ -5,6 +5,13 @@ module.exports = {
     res.send('test')
   },
   destroy: (req, res) => {
-    res.send('test')
+    Card.findById(req.params.id)
+      .then((card) => {
+        card.update({
+          completedAt: null,
+        }).then(() => { res.status(204).send() })
+          .catch((error) => { res.status(400).send(error) })
+      })
+      .catch((error) => { res.status(400).send(error) })
   },
 }
