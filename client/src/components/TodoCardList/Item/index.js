@@ -7,7 +7,7 @@ const Item = props => (
     <Card>
       <CardBody className="text-left">
         <Input
-          checked={props.completedAt}
+          checked={props.completed}
           onClick={props.onChange}
           type="checkbox"
           label={props.description}
@@ -19,6 +19,7 @@ const Item = props => (
 
 Item.propTypes = {
   description: PropTypes.string.isRequired,
+  completed: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 }
 
