@@ -69,11 +69,11 @@ In order to debug backend code in browser do several steps:
 
 ## Testing
 
-### Unit testing
+### System testing
 
 #### Endpoints
 
-For endpoints unit-testing we use [Dredd](https://dredd.org/en/latest/) and [apib docs](./server/api-docs.apib) for the API
+For endpoints system-testing we use [Dredd](https://dredd.org/en/latest/) and [apib docs](./server/api-docs.apib) for the API
 
 How to run:
 

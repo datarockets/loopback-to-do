@@ -1,5 +1,5 @@
 dry-run: null
-hookfiles: ./spec/unit/controllers/**/*.hook.js
+hookfiles: ./**/*.hook.js
 language: nodejs
 sandbox: false
 server-wait: 3

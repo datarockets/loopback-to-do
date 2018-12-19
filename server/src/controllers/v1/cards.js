@@ -10,6 +10,7 @@ module.exports = {
       .then((card) => { res.status(201).send(card) })
       .catch((error) => { res.status(400).send(error) })
   },
+
   getAll: (req, res) => {
     Card.findAll({ raw: true })
       .then((cards) => { res.status(200).send(cards) })
