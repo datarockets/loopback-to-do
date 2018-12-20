@@ -1,4 +1,4 @@
-const completionController = require('../../../controllers/v1').completion
+const completionController = require('../../../controllers/v1').cardCompletion
 
 module.exports = (router) => {
   router
