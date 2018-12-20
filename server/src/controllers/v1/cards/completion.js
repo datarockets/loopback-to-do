@@ -2,7 +2,7 @@ const { Card } = require('../../../models')
 
 module.exports = {
   create: (req, res) => {
-    Card.findById(req.params.id)
+    Card.findByPk(req.params.id)
       .then((card) => {
         card.update({
           completedAt: Date.now(),
@@ -12,7 +12,7 @@ module.exports = {
       .catch((error) => { res.status(400).send(error) })
   },
   destroy: (req, res) => {
-    Card.findById(req.params.id)
+    Card.findByPk(req.params.id)
       .then((card) => {
         card.update({
           completedAt: null,
