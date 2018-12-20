@@ -5,7 +5,7 @@ import api from './requests'
 
 class TodoCardContainer extends Component {
   state = {
-    completed: this.props.completedAt ? true : false,
+    completed: !!this.props.completedAt,
   }
 
   render = () => (
@@ -21,7 +21,7 @@ class TodoCardContainer extends Component {
       api.card.completion.destroy(
         { id: this.props.id },
         () => {
-          this.setState({ completed: !this.state.completed })
+          this.setState(state => ({ completed: !state.completed }))
         },
         (error) => {
           alert(error)
@@ -31,7 +31,7 @@ class TodoCardContainer extends Component {
       api.card.completion.create(
         { id: this.props.id },
         () => {
-          this.setState({ completed: !this.state.completed })
+          this.setState(state => ({ completed: !state.completed }))
         },
         (error) => {
           alert(error)
@@ -43,7 +43,12 @@ class TodoCardContainer extends Component {
 
 TodoCardContainer.propTypes = {
   description: PropTypes.string.isRequired,
+  completedAt: PropTypes.string,
   id: PropTypes.number.isRequired,
+}
+
+TodoCardContainer.defaultProps = {
+  completedAt: '',
 }
 
 export default TodoCardContainer
