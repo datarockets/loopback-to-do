@@ -1,4 +1,4 @@
-const { Card } = require('../../../models')
+import { Card } from '../../../models'
 
 module.exports = {
   create: (req, res) => {
