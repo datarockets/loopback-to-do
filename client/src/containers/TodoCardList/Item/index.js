@@ -5,23 +5,23 @@ import api from './requests'
 
 class TodoCardContainer extends Component {
   state = {
-    completedAt: this.props.completedAt,
+    completed: !!this.props.completedAt,
   }
 
   render = () => (
     <TodoCard
       description={this.props.description}
-      completedAt={this.state.completedAt}
+      completed={this.state.completed}
       onChange={this.updateCompletedAt}
     />
   );
 
   updateCompletedAt = () => {
-    if (this.isCompleted()) {
+    if (this.state.completed) {
       api.card.completion.destroy(
         { id: this.props.id },
         () => {
-          this.setState({ completedAt: null })
+          this.setState(state => ({ completed: !state.completed }))
         },
         (error) => {
           alert(error)
@@ -30,8 +30,8 @@ class TodoCardContainer extends Component {
     } else {
       api.card.completion.create(
         { id: this.props.id },
-        (response) => {
-          this.setState({ completedAt: response.card.completedAt })
+        () => {
+          this.setState(state => ({ completed: !state.completed }))
         },
         (error) => {
           alert(error)
@@ -39,14 +39,16 @@ class TodoCardContainer extends Component {
       )
     }
   }
-
-  isCompleted = () =>
-    this.state.completedAt != null
 }
 
 TodoCardContainer.propTypes = {
   description: PropTypes.string.isRequired,
+  completedAt: PropTypes.string,
   id: PropTypes.number.isRequired,
+}
+
+TodoCardContainer.defaultProps = {
+  completedAt: '',
 }
 
 export default TodoCardContainer
