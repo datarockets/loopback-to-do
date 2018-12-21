@@ -12,11 +12,10 @@ module.exports = {
   },
   destroy: (req, res) => {
     Card
-      .destroy({
-        where: { id: req.params.id },
-      })
+      .findByPk(req.params.id)
+      .then((card) => { card.destroy() })
       .then(() => { res.status(204).send() })
-      .catch((error) => { res.status(400).send(error) })
+      .catch(() => { res.status(400).send({ error: 'Bad Request', message: 'Card not found' }) })
   },
   getAll: (req, res) => {
     Card.findAll({ raw: true })
