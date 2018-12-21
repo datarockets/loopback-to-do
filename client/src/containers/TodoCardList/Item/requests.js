@@ -1,26 +1,32 @@
 import axios from 'axios'
+import routes from 'src/server'
+
+const request = async (promise, responseHandler, errorHandler) => {
+  try {
+    responseHandler(await promise)
+  } catch (error) {
+    errorHandler(error)
+  }
+}
 
 export default {
-  card: {
+  cards: {
     completion: {
-      create: async (card, responseHandler, errorHandler) => {
-        try {
-          responseHandler(
-            await axios.post(`http://localhost:5000/api/v1/cards/${card.id}/completion`),
-          )
-        } catch (error) {
-          errorHandler(error)
-        }
-      },
-      destroy: async (card, responseHandler, errorHandler) => {
-        try {
-          responseHandler(
-            await axios.delete(`http://localhost:5000/api/v1/cards/${card.id}/completion`),
-          )
-        } catch (error) {
-          errorHandler(error)
-        }
-      },
+      create: (card, responseHandler, errorHandler) => request(
+        axios.post(routes.cardCompletion(card.id)),
+        responseHandler,
+        errorHandler,
+      ),
+      delete: (card, responseHandler, errorHandler) => request(
+        axios.delete(routes.cardCompletion(card.id)),
+        responseHandler,
+        errorHandler,
+      ),
     },
+    delete: (card, responseHandler, errorHandler) => request(
+      axios.delete(routes.card(card.id)),
+      errorHandler,
+      responseHandler,
+    ),
   },
 }

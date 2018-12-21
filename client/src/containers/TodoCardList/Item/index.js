@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import TodoCard from 'src/components/TodoCardList/Item'
 import api from './requests'
 
-class TodoCardContainer extends Component {
+class Item extends Component {
   state = {
     completed: !!this.props.completedAt,
   }
@@ -13,18 +13,27 @@ class TodoCardContainer extends Component {
       description={this.props.description}
       completed={this.state.completed}
       onChange={this.updateCompletedAt}
+      onClick={this.deleteCard}
     />
   );
 
+  deleteCard = () => {
+    api.cards.delete(
+      { id: this.props.id },
+      () => { this.props.onDelete(this.props.id) },
+      (error) => { alert(error) },
+    )
+  }
+
   updateCompletedAt = () => {
     if (this.state.completed) {
-      api.card.completion.destroy(
+      api.cards.completion.destroy(
         { id: this.props.id },
         () => this.setState(state => ({ completed: !state.completed })),
         error => alert(error),
       )
     } else {
-      api.card.completion.create(
+      api.cards.completion.create(
         { id: this.props.id },
         () => this.setState(state => ({ completed: !state.completed })),
         error => alert(error),
@@ -33,14 +42,15 @@ class TodoCardContainer extends Component {
   }
 }
 
-TodoCardContainer.propTypes = {
+Item.propTypes = {
   description: PropTypes.string.isRequired,
   completedAt: PropTypes.string,
   id: PropTypes.number.isRequired,
+  onDelete: PropTypes.func.isRequired,
 }
 
-TodoCardContainer.defaultProps = {
+Item.defaultProps = {
   completedAt: '',
 }
 
-export default TodoCardContainer
+export default Item

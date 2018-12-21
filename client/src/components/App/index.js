@@ -15,7 +15,7 @@ const App = props => (
           <CreateCardFormContainer onCreate={props.addTodoCard} />
         </section>
         <section>
-          <TodoCardList items={props.todoCards} />
+          <TodoCardList items={props.todoCards} onDelete={props.deleteTodoCard} />
         </section>
       </div>
     </div>
@@ -25,6 +25,7 @@ const App = props => (
 App.propTypes = {
   todoCards: PropTypes.arrayOf(TodoCard).isRequired,
   addTodoCard: PropTypes.func.isRequired,
+  deleteTodoCard: PropTypes.func.isRequired,
 }
 
 export default App
