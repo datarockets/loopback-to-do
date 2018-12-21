@@ -5,9 +5,7 @@ import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import middleware from './middleware'
 import apiRouter from './routes/v1'
-import config from './config.json'
-
-require('dotenv').config()
+import config from './config/server'
 
 const app = express()
 app.server = http.createServer(app)
@@ -29,8 +27,8 @@ app.use('/api/v1', apiRouter)
 // internal middleware
 app.use(middleware())
 
-app.server.listen(process.env.PORT || config.port, () => {
-  console.log(`Started ${process.env.NODE_ENV} env on port ${app.server.address().port}`)
+app.server.listen(config.port, () => {
+  console.log(`Started ${process.env.NODE_ENV} env on port ${config.port}`)
 })
 
 export default app

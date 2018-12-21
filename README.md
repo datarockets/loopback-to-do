@@ -77,8 +77,8 @@ For endpoints system-testing we use [Dredd](https://dredd.org/en/latest/) and [a
 
 How to run:
 
-* Start dev server in testing mode via `yarn dev-test`
-* Call `yarn test-api` for running test suites
+* Call `yarn test:api`
+  (it runs dredd tests and kills server process)
 
 Note: all Dredd hooks' files have .hook.js postfix
 
