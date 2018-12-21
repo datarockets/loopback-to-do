@@ -15,11 +15,11 @@ We use:
 
 ### Setup
 
-`yarn setup` script will install all needed dependencies and utils
+`yarn setup` installs dependencies & utils for both client and server
 
 ### Update
 
-`yarn update` script will update all needed dependencies and utils
+`yarn update` updates dependencies & utils for both client and server
 
 ### Scripts
 
@@ -29,10 +29,9 @@ List of available scripts:
 * `yarn client` - run client app;
 * `yarn server` - run server app;
 * `yarn lint` - lint server and client code;
-* `yarn lint-server` - lint server code;
-* `yarn lint-client` - lint client code;
+
+* `yarn setup` or `bin/setup` - installs all dependencies;
 * `yarn update` or `bin/update` - update all dependencies.
-* `yarn test-server` - run servers' tests.
 
 ### Debug
 
