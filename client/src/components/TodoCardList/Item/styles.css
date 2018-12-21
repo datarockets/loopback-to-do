@@ -1,0 +1,15 @@
+.delete__button {
+  padding: 0;
+  margin: 0;
+  width: 1.8em;
+}
+
+.delete__button-no-shadow {
+  box-shadow: none !important;
+ }
+
+.utility__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

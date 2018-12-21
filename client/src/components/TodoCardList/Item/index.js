@@ -1,17 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, CardBody, Input } from 'mdbreact'
+import { Card, CardBody, Button } from 'mdbreact'
+
+import styles from './styles.css'
 
 const Item = props => (
-  <div className="pt-1">
+  <div className="pt-1" styles={styles}>
     <Card>
-      <CardBody className="text-left">
-        <Input
-          checked={props.completed}
-          onClick={props.onChange}
-          type="checkbox"
-          label={props.description}
-        />
+      <CardBody>
+        <div className="row d-flex align-items-center">
+          <div className="col-sm-2 utility__container">
+            <input
+              type="checkbox"
+              value=""
+              onChange={props.onChange}
+              checked={props.completed}
+            />
+          </div>
+          <div className="col-sm-8 text-left">
+            <span>
+              {props.description}
+            </span>
+          </div>
+          <div className="col-sm-2 utility__container">
+            <Button color="danger" className="delete__button delete__button-no-shadow fa fa-trash" />
+          </div>
+        </div>
       </CardBody>
     </Card>
   </div>
