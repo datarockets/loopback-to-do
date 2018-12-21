@@ -69,7 +69,18 @@ In order to debug backend code in browser do several steps:
 
 ## Testing
 
-WIP
+### System testing
+
+#### Endpoints
+
+For endpoints system-testing we use [Dredd](https://dredd.org/en/latest/) and [apib docs](./server/api-docs.apib) for the API
+
+How to run:
+
+* Start dev server in testing mode via `yarn dev-test`
+* Call `yarn test-api` for running test suites
+
+Note: all Dredd hooks' files have .hook.js postfix
 
 ## Deployment
 
