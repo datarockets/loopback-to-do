@@ -4,7 +4,7 @@ const dbMock = new SequelizeDBMock()
 
 module.exports = () => {
   const Card = dbMock.define('Card', {
-    description: 'Homеwork'
+    description: 'Homеwork',
   })
 
   return Card
