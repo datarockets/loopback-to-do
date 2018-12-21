@@ -3,16 +3,23 @@
   "version": "0.1.0",
   "description": "ToDo app API",
   "main": "build",
+  "config": {
+    "test_port": "8000"
+  },
   "private": true,
   "scripts": {
     "dev": "nodemon -w src --exec \"babel-node src\"",
-    "dev-test": "NODE_ENV=test PORT=8000 yarn dev",
+    "dev:test": "NODE_ENV=test PORT=$npm_package_config_test_port babel-node src",
     "debug": "nodemon -w src src/index.js --exec 'babel-node --inspect'",
-    "build": "babel src -s -D -d build",
-    "start": "node build",
+
+    "test": "yarn test:api",
+    "test:api": "yarn test:dredd",
+    "test:dredd": "babel-node node_modules/.bin/dredd",
+
     "lint": "eslint src",
-    "test": "NODE_ENV=test yarn jasmine",
-    "test-api": "NODE_ENV=test babel-node node_modules/.bin/dredd"
+
+    "build": "babel src -d build",
+    "start": "node build"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
