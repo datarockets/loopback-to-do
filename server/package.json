@@ -20,7 +20,10 @@
     "lint": "eslint src",
 
     "build": "babel src -d build",
-    "start": "node build"
+    "start": "node build",
+
+    "setup": "bin/setup",
+    "update": "bin/update"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
