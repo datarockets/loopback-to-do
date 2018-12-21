@@ -2,6 +2,7 @@ dry-run: null
 hookfiles: ./**/*.hook.js
 language: nodejs
 sandbox: false
+server: yarn dev:test
 server-wait: 3
 init: false
 custom: {}
