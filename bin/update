@@ -3,16 +3,12 @@
 echo "Updating dependencies:"
 yarn
 
-echo "Updating client dependencies:"
-cd client && yarn
+echo "Update client dependencies:"
+cd ./client
+bin/update
 
-echo "Updating server dependencies:"
-cd ../server && yarn
+echo "Update server dependencies:"
+cd ../server
+bin/update
 
-echo "WIP: updating list of env vars from .env.sample"
-
-echo "Runing migrations:"
-node_modules/.bin/sequelize db:migrate
-
-echo "Runing migrations for test db:"
-NODE_ENV=test node_modules/.bin/sequelize db:migrate
+cd ./

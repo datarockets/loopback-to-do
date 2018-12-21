@@ -15,32 +15,11 @@ We use:
 
 ### Setup
 
-WIP: `yarn setup` script will be implemented for faster development start
+`yarn setup` script will install all needed dependencies and utils
 
-1) You may want to install packages for both server and client apps, here you are:
+### Update
 
-in root dir: `yarn update`
-
-2) Create database using sequelize:
-
-  `node_modules/.bin/sequelize db:create`
-  `NODE_ENV=test node_modules/.bin/sequelize db:create`
-
-3) For interacting with sequalize cli directly from command line, you may want to install it globally:
-
-  `yarn add sequelize-cli -g`
-
-On the other hand you can always use `node_modules/.bin/sequelize` for not installing globally 😉
-
-4) Install `dredd` globally for easier usage
-
-  `yarn add dredd -g`
-
-Or just use `node_modules/.bin/dredd` instead
-
-5) Copy env variables
-
-  `cp ../server/.env.sample ../server/.env`
+`yarn update` script will update all needed dependencies and utils
 
 ### Scripts
 

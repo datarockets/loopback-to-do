@@ -1,0 +1,15 @@
+#! /bin/bash
+
+echo "Downloading dependencies:"
+yarn
+
+echo "Setup client dependencies:"
+cd ./client
+bin/setup
+
+echo "Setup server dependencies:"
+cd ../server
+bin/setup
+
+cd ./
+
