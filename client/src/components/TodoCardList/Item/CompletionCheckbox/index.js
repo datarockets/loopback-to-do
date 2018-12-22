@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { noop } from 'underscore'
 
 const CompletionCheckbox = props => (
   <div className="col-sm-2 utility__container">
@@ -18,7 +19,7 @@ CompletionCheckbox.propTypes = {
 }
 
 CompletionCheckbox.defaultProps = {
-  onChange: () => alert('CompletionCheckbox onChange Handler'),
+  onChange: noop,
   checked: false,
 }
 

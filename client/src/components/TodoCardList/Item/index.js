@@ -12,7 +12,7 @@ const Item = props => (
       <CardBody>
         <div className="row d-flex align-items-center">
           <CompletionCheckbox onChange={props.onChange} checked={props.completed} />
-          <Description description={props.description} />
+          <Description text={props.description} />
           <DeletionButton onClick={props.onClick} />
         </div>
       </CardBody>

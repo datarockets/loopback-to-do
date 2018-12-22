@@ -21,13 +21,13 @@ class Item extends Component {
     api.cards.delete(
       { id: this.props.id },
       () => { this.props.onDelete(this.props.id) },
-      (error) => { alert(error) },
+      error => alert(error),
     )
   }
 
   updateCompletedAt = () => {
     if (this.state.completed) {
-      api.cards.completion.destroy(
+      api.cards.completion.delete(
         { id: this.props.id },
         () => this.setState(state => ({ completed: !state.completed })),
         error => alert(error),

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'mdbreact'
+import { noop } from 'underscore'
 
 import styles from './styles.css'
 
@@ -19,7 +20,7 @@ DeletionButton.propTypes = {
 }
 
 DeletionButton.defaultProps = {
-  onClick: () => alert('DeletionButton onClick Handler'),
+  onClick: noop,
 }
 
 export default DeletionButton

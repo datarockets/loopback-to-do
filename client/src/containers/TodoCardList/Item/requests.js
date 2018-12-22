@@ -25,8 +25,8 @@ export default {
     },
     delete: (card, responseHandler, errorHandler) => request(
       axios.delete(routes.card(card.id)),
-      errorHandler,
       responseHandler,
+      errorHandler,
     ),
   },
 }

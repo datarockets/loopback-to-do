@@ -1,8 +1,8 @@
-const routes = {
-  baseUrl: 'http://localhost:5000/api/v1',
+const BASE_URL = 'http://localhost:5000/api/v1'
 
-  cards: () => `${routes.baseUrl}/cards`,
-  card: id => `${routes.baseUrl}/card/${id}`,
+const routes = {
+  cards: () => `${BASE_URL}/cards`,
+  card: id => `${BASE_URL}/cards/${id}`,
   cardCompletion: id => `${routes.card(id)}/completion`,
 }
 
