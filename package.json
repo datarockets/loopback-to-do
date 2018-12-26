@@ -9,11 +9,13 @@
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "client": "cd client && yarn start",
     "server": "cd server && yarn dev",
-    "lint": "yarn lint-server && yarn lint-client",
-    "lint-server": "cd server && yarn lint",
-    "lint-client": "cd client && yarn lint",
-    "update": "bin/update",
-    "test-server": "cd server && yarn test"
+
+    "lint": "yarn lint:server; yarn lint:client",
+    "lint:server": "cd server && yarn lint",
+    "lint:client": "cd client && yarn lint",
+
+    "setup": "bin/setup",
+    "update": "bin/update"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"
