@@ -12,8 +12,7 @@ module.exports = {
   },
 
   destroy: (req, res) => {
-    Card
-      .findByPk(req.params.id)
+    Card.findByPk(req.params.id)
       .then(card => card.destroy())
       .then(() => res.status(204).send())
       .catch(() => res.status(400).send({ error: 'Bad Request', message: 'Card not found' }))
