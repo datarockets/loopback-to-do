@@ -20,22 +20,14 @@ class TodoCardContainer extends Component {
     if (this.state.completed) {
       api.card.completion.destroy(
         { id: this.props.id },
-        () => {
-          this.setState(state => ({ completed: !state.completed }))
-        },
-        error => {
-          alert(error)
-        },
+        () => this.setState(state => ({ completed: !state.completed })),
+        error => alert(error),
       )
     } else {
       api.card.completion.create(
         { id: this.props.id },
-        () => {
-          this.setState(state => ({ completed: !state.completed }))
-        },
-        error => {
-          alert(error)
-        },
+        () => this.setState(state => ({ completed: !state.completed })),
+        error => alert(error),
       )
     }
   }
