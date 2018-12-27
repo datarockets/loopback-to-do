@@ -9,8 +9,8 @@ class AppContainer extends Component {
 
   componentDidMount() {
     api.cards.getAll(
-      (response) => { this.setState({ todoCards: response.data }) },
-      (error) => { alert(error) },
+      response => { this.setState({ todoCards: response.data }) },
+      error => { alert(error) },
     )
   }
 
@@ -21,7 +21,7 @@ class AppContainer extends Component {
     />
   )
 
-  addTodoCard = (card) => {
+  addTodoCard = card => {
     this.setState(state => ({ todoCards: [...state.todoCards, card] }))
   }
 }

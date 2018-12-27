@@ -23,7 +23,7 @@ class TodoCardContainer extends Component {
         () => {
           this.setState(state => ({ completed: !state.completed }))
         },
-        (error) => {
+        error => {
           alert(error)
         },
       )
@@ -33,7 +33,7 @@ class TodoCardContainer extends Component {
         () => {
           this.setState(state => ({ completed: !state.completed }))
         },
-        (error) => {
+        error => {
           alert(error)
         },
       )

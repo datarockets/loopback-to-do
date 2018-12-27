@@ -16,20 +16,15 @@ class CreateCardFormContainer extends Component {
     />
   );
 
-  setDescription = (event) => {
+  setDescription = event =>
     this.setState({ description: event.target.value })
-  }
 
-  createCard = (event) => {
+  createCard = event => {
     event.preventDefault()
     api.cards.create(
       { description: this.state.description },
-      (response) => {
-        this.props.onCreate(response.data)
-      },
-      (error) => {
-        alert(error)
-      },
+      response => this.props.onCreate(response.data),
+      error => alert(error),
     )
   }
 }
