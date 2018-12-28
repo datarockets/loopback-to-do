@@ -8,20 +8,16 @@
   },
   "private": true,
   "scripts": {
-    "dev": "nodemon -w src --exec \"babel-node src\"",
+    "dev": "nodemon -w src --exec 'babel-node src'",
     "dev:test": "NODE_ENV=test PORT=$npm_package_config_test_port babel-node src",
     "dev:test:kill": "lsof -t -i:$npm_package_config_test_port | xargs kill -15 | xargs kill -9",
-    "debug": "nodemon -w src src/index.js --exec 'babel-node --inspect'",
-
+    "debug": "nodemon -w src --exec 'babel-node --inspect'",
     "test": "yarn test:api",
     "test:api": "yarn test:dredd; yarn dev:test:kill",
     "test:dredd": "NODE_ENV=test babel-node node_modules/.bin/dredd",
-
-    "lint": "eslint src",
-
+    "lint": "eslint src spec",
     "build": "babel src -d build",
     "start": "node build",
-
     "setup": "bin/setup",
     "update": "bin/update"
   },
