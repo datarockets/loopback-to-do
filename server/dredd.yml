@@ -3,7 +3,7 @@ hookfiles: ./**/*.hook.js
 language: nodejs
 sandbox: false
 server: yarn dev:test
-server-wait: 3
+server-wait: 0
 init: false
 custom: {}
 names: false
