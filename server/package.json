@@ -15,7 +15,7 @@
 
     "test": "yarn test:api",
     "test:api": "yarn test:dredd; yarn dev:test:kill",
-    "test:dredd": "babel-node node_modules/.bin/dredd",
+    "test:dredd": "NODE_ENV=test babel-node node_modules/.bin/dredd",
 
     "lint": "eslint src",
 
