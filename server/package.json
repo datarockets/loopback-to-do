@@ -4,7 +4,7 @@
   "description": "ToDo app API",
   "main": "build",
   "config": {
-    "test_port": "8000"
+    "test_port": "6000"
   },
   "private": true,
   "scripts": {
