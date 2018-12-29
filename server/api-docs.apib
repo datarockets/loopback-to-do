@@ -86,13 +86,16 @@ Create completion for card
 - Response 201 (application/json; charset=utf-8)
 
     - Attributes (object)
-        + completedAt (string) - Timestamp of the card completion creation.
+        + card (object)
+            + completedAt (string) - Timestamp of the card completion creation.
 
     - Body
 
         ```
         {
-          "completedAt": "2018-12-05T16:44:29.408Z"
+          "card": {
+            "completedAt": "2018-12-05T16:44:29.408Z"
+          }
         }
         ```
 

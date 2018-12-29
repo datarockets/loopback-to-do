@@ -3,7 +3,7 @@ hookfiles: ./**/*.hook.js
 language: nodejs
 sandbox: false
 server: yarn dev:test
-server-wait: 3
+server-wait: 0
 init: false
 custom: {}
 names: false
@@ -21,14 +21,14 @@ level: info
 timestamp: false
 silent: false
 path: []
-hooks-worker-timeout: 5000
-hooks-worker-connect-timeout: 1500
-hooks-worker-connect-retry: 500
-hooks-worker-after-connect-wait: 100
-hooks-worker-term-timeout: 5000
-hooks-worker-term-retry: 500
+hooks-worker-timeout: 10
+hooks-worker-connect-timeout: 10
+hooks-worker-connect-retry: 100
+hooks-worker-after-connect-wait: 10
+hooks-worker-term-timeout: 10
+hooks-worker-term-retry: 100
 hooks-worker-handler-host: 127.0.0.1
 hooks-worker-handler-port: 61321
 config: ./dredd.yml
 blueprint: api-docs.apib
-endpoint: 'http://127.0.0.1:8000'
+endpoint: 'http://127.0.0.1:6000'
