@@ -1,7 +1,7 @@
-version: 2
+version: 2.1
 
 jobs:
-  build-client:
+  bundle-client-dependencies:
     working_directory: ~/loopback-to-do/client
     docker:
       - image: circleci/node:11.6
@@ -21,7 +21,7 @@ jobs:
           root: .
           paths:
             - node_modules
-  build-server:
+  bundle-server-dependencies:
     working_directory: ~/loopback-to-do/server
     docker:
       - image: circleci/node:11.6
@@ -89,18 +89,18 @@ jobs:
           name: Test server
           command: yarn test:dredd
 workflows:
-  version: 2
+  version: 2.1
   build_test_and_lint:
     jobs:
-      - build-client
-      - build-server
+      - bundle-client-dependencies
+      - bundle-server-dependencies
       - lint-client:
           requires:
-            - build-client
+            - bundle-client-dependencies
       - lint-server:
           requires:
-            - build-server
+            - bundle-server-dependencies
       - test-server:
           requires:
-            - build-server
+            - bundle-server-dependencies
       
