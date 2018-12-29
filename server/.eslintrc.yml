@@ -4,6 +4,9 @@ rules:
   import/no-extraneous-dependencies:
     - error
     - devDependencies: true
+  func-names:
+    - error
+    - never
 settings:
   import/core-modules:
     - hooks

@@ -1,5 +1,4 @@
 import 'app-module-path/cwd'
-
 import { beforeAll, afterAll } from 'hooks'
 import db from 'src/models'
 
