@@ -1,11 +1,13 @@
+import 'app-module-path/cwd'
 import http from 'http'
 import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
-import middleware from './middleware'
-import apiRouter from './routes/v1'
-import config from './config/server'
+
+import middleware from 'src/middleware'
+import apiRouter from 'src/routes/v1'
+import config from 'src/config/server'
 
 const app = express()
 app.server = http.createServer(app)
