@@ -1,0 +1,106 @@
+version: 2.1
+
+jobs:
+  bundle-client-dependencies:
+    working_directory: ~/loopback-to-do/client
+    docker:
+      - image: circleci/node:11.6
+    steps:
+      - checkout:
+          path: ~/loopback-to-do
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Client setup
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+  bundle-server-dependencies:
+    working_directory: ~/loopback-to-do/server
+    docker:
+      - image: circleci/node:11.6
+    steps:
+      - checkout:
+          path: ~/loopback-to-do
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Server setup
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+  lint-client:
+    working_directory: ~/loopback-to-do/client
+    docker:
+      - image: circleci/node:11.6
+    steps:
+      - checkout:
+          path: ~/loopback-to-do
+      - attach_workspace:
+          at: ~/loopback-to-do/client
+      - run:
+          name: Lint client
+          command: ./node_modules/.bin/eslint src
+  lint-server:
+    working_directory: ~/loopback-to-do/server
+    docker:
+      - image: circleci/node:11.6
+    steps:
+      - checkout:
+          path: ~/loopback-to-do
+      - attach_workspace:
+          at: ~/loopback-to-do/server
+      - run:
+          name: Lint server
+          command: ./node_modules/.bin/eslint src
+  test-server:
+    working_directory: ~/loopback-to-do/server
+    docker:
+      - image: circleci/node:11.6
+        environment:
+          PGUSER: postgres
+      - image: circleci/postgres:10-alpine-postgis
+        environment:
+          POSTGRES_USER: postgres
+    steps:
+      - checkout:
+          path: ~/loopback-to-do
+      - attach_workspace:
+          at: ~/loopback-to-do/server
+      - run:
+          name: Create DB
+          command: NODE_ENV=test node_modules/.bin/sequelize db:create
+      - run:
+          name: Run migrations
+          command: NODE_ENV=test node_modules/.bin/sequelize db:migrate
+      - run:
+          name: Test server
+          command: yarn test:dredd
+workflows:
+  version: 2.1
+  build_test_and_lint:
+    jobs:
+      - bundle-client-dependencies
+      - bundle-server-dependencies
+      - lint-client:
+          requires:
+            - bundle-client-dependencies
+      - lint-server:
+          requires:
+            - bundle-server-dependencies
+      - test-server:
+          requires:
+            - bundle-server-dependencies
+      
