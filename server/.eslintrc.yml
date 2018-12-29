@@ -5,5 +5,15 @@ rules:
     - error
     - devDependencies: true
 settings:
+  import/core-modules:
+    - hooks
   import/ignore:
     - models/index
+    - controllers/v1/index
+  import/resolver:
+    node:
+      extensions:
+        - .js
+      moduleDirectory:
+        - node_modules
+        - ./
