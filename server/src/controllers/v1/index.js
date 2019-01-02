@@ -1,7 +1,7 @@
-const cards = require('./cards')
-const cardCompletion = require('./cards/completion')
+import cardsController from './cards'
+import cardCompletionController from './cards/completion'
 
 module.exports = {
-  cards,
-  cardCompletion,
+  cardsController,
+  cardCompletionController,
 }

@@ -1,6 +1,6 @@
-const completionController = require('../../../controllers/v1').cardCompletion
+import { cardCompletionController } from 'src/controllers/v1'
 
 module.exports = router =>
   router
-    .post('/cards/:id/completion', completionController.create)
-    .delete('/cards/:id/completion', completionController.destroy)
+    .post('/cards/:id/completion', cardCompletionController.create)
+    .delete('/cards/:id/completion', cardCompletionController.destroy)

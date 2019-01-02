@@ -1,4 +1,4 @@
-import { Card } from '../../models'
+import { Card } from 'src/models'
 
 module.exports = {
   create: (req, res) => {
