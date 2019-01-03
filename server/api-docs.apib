@@ -105,3 +105,36 @@ Destroy completion for card
 - Request (application/json)
 
 + Response 204
+
+
+## Card [/api/v1/cards/{id}]
+
+- Parameters
+    + id: 1 (required)
+
+### DELETE
+
+- Request (application/json)
+- Response 204
+
+- Request (application/json)
+
+    When record not found
+
+    - Parameters
+        + id: 1000 (required)
+
+- Response 400 (application/json; charset=utf-8)
+
+    - Attributes (object)
+        + error (string) - Error type
+        + message (string) - Error message
+
+    - Body
+
+        ```
+        {
+          error: "Bad Request",
+          message: "Card not found"
+        }
+        ```

@@ -18,11 +18,15 @@ class AppContainer extends Component {
     <App
       todoCards={this.state.todoCards}
       addTodoCard={this.addTodoCard}
+      deleteTodoCard={this.deleteTodoCard}
     />
   )
 
   addTodoCard = card =>
     this.setState(state => ({ todoCards: [...state.todoCards, card] }))
+
+  deleteTodoCard = cardId =>
+    this.setState(state => ({ todoCards: state.todoCards.filter(el => el.id !== cardId) }))
 }
 
 export default AppContainer

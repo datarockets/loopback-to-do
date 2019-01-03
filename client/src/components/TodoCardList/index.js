@@ -12,6 +12,7 @@ const TodoCardList = props => (
           id={todoCard.id}
           description={todoCard.description}
           completedAt={todoCard.completedAt}
+          onDelete={props.onDelete}
         />
       ))
     }
@@ -20,6 +21,7 @@ const TodoCardList = props => (
 
 TodoCardList.propTypes = {
   items: PropTypes.arrayOf(TodoCard).isRequired,
+  onDelete: PropTypes.func.isRequired,
 }
 
 export default TodoCardList
