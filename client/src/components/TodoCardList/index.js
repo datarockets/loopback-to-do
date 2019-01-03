@@ -12,6 +12,7 @@ const TodoCardList = props => (
           id={todoCard.id}
           description={todoCard.description}
           completedAt={todoCard.completedAt}
+          tags={todoCard.tags}
           onDelete={props.onDelete}
         />
       ))
