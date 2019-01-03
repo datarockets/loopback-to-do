@@ -6,6 +6,7 @@ import api from './requests'
 class Item extends Component {
   state = {
     completed: !!this.props.completedAt,
+    tags: this.props.tags,
   }
 
   render = () => (
@@ -46,6 +47,12 @@ Item.propTypes = {
   description: PropTypes.string.isRequired,
   completedAt: PropTypes.string,
   id: PropTypes.number.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    createdAt: PropTypes.string,
+    updatedAt: PropTypes.string,
+  })).isRequired,
   onDelete: PropTypes.func.isRequired,
 }
 
