@@ -4,6 +4,7 @@ const routes = {
   cards: () => `${BASE_URL}/cards`,
   card: id => `${BASE_URL}/cards/${id}`,
   cardCompletion: id => `${routes.card(id)}/completion`,
+  cardTags: id => `${routes.card(id)}/tags`,
 }
 
 export default routes

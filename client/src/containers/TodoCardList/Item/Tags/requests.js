@@ -13,7 +13,7 @@ export default {
   cards: {
     tags: {
       create: (card, responseHandler, errorHandler) => request(
-        axios.post(routes.cardCompletion(card.id)),
+        axios.post(routes.cardTags(card.id)),
         responseHandler,
         errorHandler,
       ),
