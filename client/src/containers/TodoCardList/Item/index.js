@@ -11,6 +11,7 @@ class Item extends Component {
 
   render = () => (
     <TodoCard
+      id={this.props.id}
       description={this.props.description}
       completed={this.state.completed}
       tags={this.state.tags}
