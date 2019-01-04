@@ -15,7 +15,7 @@ const Item = props => (
           <CompletionCheckbox onChange={props.onChange} checked={props.completed} />
           <Description text={props.description} />
           <DeletionButton onClick={props.onClick} />
-          <TagsContainer onCreate={props.addTag} />
+          <TagsContainer tags={props.tags} onCreate={props.addTag} />
         </div>
       </CardBody>
     </Card>
