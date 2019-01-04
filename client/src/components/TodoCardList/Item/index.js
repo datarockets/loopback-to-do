@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Card, CardBody } from 'mdbreact'
 
+import TagsContainer from 'src/containers/TodoCardList/Item/Tags'
 import DeletionButton from './DeletionButton'
 import Description from './Description'
 import CompletionCheckbox from './CompletionCheckbox'
@@ -14,6 +15,7 @@ const Item = props => (
           <CompletionCheckbox onChange={props.onChange} checked={props.completed} />
           <Description text={props.description} />
           <DeletionButton onClick={props.onClick} />
+          <TagsContainer onCreate={props.addTag} />
         </div>
       </CardBody>
     </Card>
@@ -23,6 +25,7 @@ const Item = props => (
 Item.propTypes = {
   description: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
+  addTag: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
 }
