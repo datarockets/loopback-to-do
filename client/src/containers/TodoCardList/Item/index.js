@@ -41,6 +41,9 @@ class Item extends Component {
       )
     }
   }
+
+  addTag = tag =>
+    this.setState(state => ({ tags: [...state.tags, tag] }))
 }
 
 Item.propTypes = {
