@@ -13,6 +13,8 @@ class Item extends Component {
     <TodoCard
       description={this.props.description}
       completed={this.state.completed}
+      tags={this.state.tags}
+      addTag={this.addTag}
       onChange={this.updateCompletedAt}
       onClick={this.deleteCard}
     />
