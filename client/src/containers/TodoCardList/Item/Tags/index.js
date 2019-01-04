@@ -5,13 +5,15 @@ import api from './requests'
 class TagsContainer extends Component {
   render = () => (
     <div>
-      <ReactTags tags={this.props.tags}
-       />
+      <ReactTags
+        tags={this.props.tags}
+        handleAddition={this.props.onСreate}
+      />
     </div>
   );
 
   createTag = () => {
-    api.cards.tags.create(
+    api.card.tags.create(
       { id: this.props.cardId },
       response => this.props.onCreate(response.data),
       error => alert(error),
