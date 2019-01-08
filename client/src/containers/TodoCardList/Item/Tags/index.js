@@ -24,6 +24,15 @@ class TagsContainer extends Component {
       error => alert(error),
     )
   }
+
+  deleteTag = tagIndex => {
+    api.card.tags.delete(
+      { id: this.props.cardId },
+      { id: this.props.tags[tagIndex].id },
+      response => this.props.onDelete(tagIndex),
+      error => alert(error),
+    )
+  }
 }
 
 export default TagsContainer
