@@ -16,7 +16,10 @@ class TagsContainer extends Component {
     api.card.tags.create(
       { id: this.props.cardId },
       { text: tag.text },
-      response => this.props.onCreate(response.data),
+      response => this.props.onCreate({
+        id: response.data.id.toString(),
+        text: response.data.text,
+      }),
       error => alert(error),
     )
   }
