@@ -55,7 +55,7 @@ Item.propTypes = {
   id: PropTypes.number.isRequired,
   tags: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
-    name: PropTypes.string,
+    text: PropTypes.string,
     createdAt: PropTypes.string,
     updatedAt: PropTypes.string,
   })).isRequired,
