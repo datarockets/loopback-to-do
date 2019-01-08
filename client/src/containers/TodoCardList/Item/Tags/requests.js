@@ -17,6 +17,11 @@ export default {
         responseHandler,
         errorHandler,
       ),
+      delete: (card, tag, responseHandler, errorHandler) => request(
+        axios.delete(routes.cardTag(card.id, tag.id)),
+        responseHandler,
+        errorHandler,
+      ),
     },
   },
 }
