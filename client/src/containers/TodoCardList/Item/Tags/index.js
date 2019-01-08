@@ -8,6 +8,7 @@ class TagsContainer extends Component {
       <ReactTags
         tags={this.props.tags}
         handleAddition={this.createTag}
+        handleDelete={this.props.onDelete}
       />
     </div>
   );

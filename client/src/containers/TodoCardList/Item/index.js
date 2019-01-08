@@ -16,6 +16,7 @@ class Item extends Component {
       completed={this.state.completed}
       tags={this.state.tags}
       addTag={this.addTag}
+      deleteTag={this.deleteTag}
       onChange={this.updateCompletedAt}
       onClick={this.deleteCard}
     />
@@ -47,6 +48,12 @@ class Item extends Component {
 
   addTag = tag =>
     this.setState(state => ({ tags: [...state.tags, tag] }))
+
+  deleteTag = (tagIndex) => {
+    this.setState(state => ({
+      tags: state.tags.filter((tag, index) => index !== tagIndex),
+    }))
+  }
 }
 
 Item.propTypes = {
