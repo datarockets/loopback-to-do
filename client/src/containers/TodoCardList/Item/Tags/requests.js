@@ -12,8 +12,8 @@ const request = async (promise, responseHandler, errorHandler) => {
 export default {
   card: {
     tags: {
-      create: (card, responseHandler, errorHandler) => request(
-        axios.post(routes.cardTags(card.id)),
+      create: (card, newTag, responseHandler, errorHandler) => request(
+        axios.post(routes.cardTags(card.id), newTag),
         responseHandler,
         errorHandler,
       ),

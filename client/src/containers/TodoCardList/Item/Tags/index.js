@@ -7,14 +7,15 @@ class TagsContainer extends Component {
     <div>
       <ReactTags
         tags={this.props.tags}
-        handleAddition={this.props.onCreate}
+        handleAddition={this.createTag}
       />
     </div>
   );
 
-  createTag = () => {
+  createTag = tag => {
     api.card.tags.create(
       { id: this.props.cardId },
+      { text: tag.text },
       response => this.props.onCreate(response.data),
       error => alert(error),
     )
