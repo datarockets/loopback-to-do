@@ -6,7 +6,7 @@ import api from './requests'
 class Item extends Component {
   state = {
     completed: !!this.props.completedAt,
-    tags: this.props.tags || [{ id: '13', text: 'text' }, { id: '14', text: 'text' }],
+    tags: this.props.tags || [{ id: '13', text: 'tag1' }, { id: '14', text: 'tag2' }],
   }
 
   render = () => (

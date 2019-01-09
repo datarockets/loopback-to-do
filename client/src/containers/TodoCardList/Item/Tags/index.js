@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { WithContext as ReactTags } from 'react-tag-input'
 import PropTypes from 'prop-types'
 import api from './requests'
+import './styles.css'
 
 class TagsContainer extends Component {
   render = () => (
