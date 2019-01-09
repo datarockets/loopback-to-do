@@ -6,7 +6,7 @@ import api from './requests'
 class Item extends Component {
   state = {
     completed: !!this.props.completedAt,
-    tags: this.props.tags,
+    tags: this.props.tags || [{ id: '13', text: 'text' }, { id: '14', text: 'text' }],
   }
 
   render = () => (
@@ -61,7 +61,7 @@ Item.propTypes = {
   completedAt: PropTypes.string,
   id: PropTypes.number.isRequired,
   tags: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     text: PropTypes.string,
     createdAt: PropTypes.string,
     updatedAt: PropTypes.string,

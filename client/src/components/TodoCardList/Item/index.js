@@ -28,9 +28,17 @@ const Item = props => (
 )
 
 Item.propTypes = {
+  id: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    text: PropTypes.string,
+    createdAt: PropTypes.string,
+    updatedAt: PropTypes.string,
+  })).isRequired,
   addTag: PropTypes.func.isRequired,
+  deleteTag: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
 }
