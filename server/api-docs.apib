@@ -138,3 +138,90 @@ Destroy completion for card
           message: "Card not found"
         }
         ```
+
+## Card Tags Collection [/api/v1/cards/{id}/tags]
+
+- Parameters
+    + id: 1 (required)
+
+### POST
+Creates Tag
+
+- Attributes (object)
+    + text (string, required)
+
+- Request (application/json)
+
+    - Body
+
+        ```
+        {
+          "text": "Tag1"
+        }
+        ```
+
+- Response 201 (application/json; charset=utf-8)
+
+    - Attributes (object)
+        + id (number)
+        + text (string)
+        + updatedAt (string) - Timestamp of the last time the tag was updated;
+        + createdAt (string) - Timestamp of the tag creation.
+
+    - Body
+
+        ```
+        {
+          "id": 1,
+          "text": "Tag1",
+          "updatedAt": "2018-12-05T16:44:29.408Z",
+          "createdAt": "2018-12-05T16:44:29.408Z",
+        }
+        ```
+
+- Request (application/json)
+
+    With invalid text (empty)
+
+    - Body
+
+        ```
+        {
+          "text": null
+        }
+        ```
+
+- Response 400 (application/json; charset=utf-8)
+
+## Card Tag [/api/v1/cards/{cardId}/tags/{tagId}]
+
+- Parameters
+    + cardId: 1 (required)
+    + tagId: 1 (required)
+
+### DELETE
+
+- Request (application/json)
+- Response 204
+
+- Request (application/json)
+
+    When record not found
+
+    - Parameters
+        + tagId: 1000 (required)
+
+- Response 400 (application/json; charset=utf-8)
+
+    - Attributes (object)
+        + error (string) - Error type
+        + message (string) - Error message
+
+    - Body
+
+        ```
+        {
+          error: "Bad Request",
+          message: "Tag not found"
+        }
+        ```
